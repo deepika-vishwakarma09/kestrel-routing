@@ -1,0 +1,15 @@
+{
+  "trained_on_rows": 10822,
+  "from": "2025-04-01 00:31:00",
+  "to": "2026-06-30 23:33:00",
+  "target": "final_team",
+  "classes": [
+    "Billing",
+    "Consumables",
+    "Installations",
+    "Product Advice",
+    "Repairs",
+    "Returns & Replacement",
+    "Warranty Claims"
+  ]
+}

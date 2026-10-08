@@ -1,0 +1,26 @@
+BUSIEST TEAMS (requests per month, where requests really ended up)
+                       bot_queue  ended_up_here  arrived_by_transfer  difference
+Repairs                      209            169                   36         -40
+Installations                 79            106                   30          27
+Returns & Replacement         78            103                   27          25
+Product Advice                79             93                   17          14
+Warranty Claims               69             92                   25          23
+Billing                      110             88                   16         -22
+Consumables                   97             71                   13         -26
+There is no staffing file in the Kestrel pack, so this is demand per team, not load per person.
+
+COST OF A WRONG ROUTING
+Bot sends 22.8% of requests to the wrong team. Each such request needs 1.44 transfers on average (1.44 x Rs 305) plus one extra customer contact (Rs 260) = Rs 698.
+Bot misrouting at 726 requests a month: Rs 115,716 a month, on top of the licence (Rs 26,667 a month).
+91% of all transfers come from the bot's wrong routings.
+
+THREE WAYS TO RUN IT (monthly, 726 requests)
+Option                                                                    Misrouting + handling   Licence      Total  Saving vs bot
+Keep the bot                                                                            115,716    26,667    142,383              0
+Model routes everything                                                                  72,800         0     72,800         69,583
+Model routes when sure (confidence 0.7+), a person reads the rest                        37,669         0     37,669        104,714
+
+Saving per year: model routes everything Rs 8.3 lakh; model plus person for the unsure ones Rs 12.6 lakh.
+In the last option the model sends 84.3% of requests automatically at 98.1% accuracy; 15.7% (114 a month) go to a person.
+Assumptions: the model's wrong routings cost the same as the bot's (Rs 698); a person handling an unsure request costs Rs 260 and routes it correctly. Handling the unsure ones pays off as long as it costs less than Rs 568 a request.
+Run cost of the model: Rs 0 per prediction (no paid calls). Hosting is not priced here; it is a small program that runs on an ordinary server.

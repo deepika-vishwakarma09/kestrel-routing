@@ -1,0 +1,99 @@
+review_no,request_id,final_team,pred,conf,error_type
+1,SR505336,Product Advice,Consumables,0.306,Vague: the message does not say what the problem is
+2,SR504880,Product Advice,Installations,0.624,Vague: the message does not say what the problem is
+3,SR508547,Billing,Consumables,0.991,"Clear message, destination contradicts it (looks like label noise)"
+4,SR505381,Installations,Repairs,0.468,Vague: the message does not say what the problem is
+5,SR510282,Installations,Warranty Claims,0.361,Vague: the message does not say what the problem is
+6,SR507827,Consumables,Repairs,0.248,Vague: the message does not say what the problem is
+7,SR509426,Warranty Claims,Returns & Replacement,0.274,Vague: the message does not say what the problem is
+8,SR506209,Product Advice,Returns & Replacement,0.324,Vague: the message does not say what the problem is
+9,SR506983,Warranty Claims,Returns & Replacement,0.428,Vague: the message does not say what the problem is
+10,SR508302,Billing,Repairs,0.344,Vague: the message does not say what the problem is
+11,SR504559,Repairs,Consumables,0.426,"Two-part message, last part generic"
+12,SR504662,Installations,Warranty Claims,0.328,Vague: the message does not say what the problem is
+13,SR505573,Warranty Claims,Repairs,0.332,Vague: the message does not say what the problem is
+14,SR507264,Product Advice,Warranty Claims,0.244,Vague: the message does not say what the problem is
+15,SR510164,Product Advice,Repairs,0.417,Vague: the message does not say what the problem is
+16,SR505083,Installations,Billing,0.989,"Clear message, destination contradicts it (looks like label noise)"
+17,SR504610,Installations,Warranty Claims,0.296,Vague: the message does not say what the problem is
+18,SR505802,Billing,Product Advice,0.59,Vague: the message does not say what the problem is
+19,SR504465,Product Advice,Consumables,0.992,"Clear message, two teams defensible"
+20,SR504671,Returns & Replacement,Consumables,0.578,Vague: the message does not say what the problem is
+21,SR504699,Installations,Repairs,0.676,Vague: the message does not say what the problem is
+22,SR510575,Repairs,Returns & Replacement,0.415,"Two-part message, last part generic"
+23,SR507690,Warranty Claims,Consumables,0.991,"Clear message, destination contradicts it (looks like label noise)"
+24,SR504334,Installations,Product Advice,0.647,Vague: the message does not say what the problem is
+25,SR508788,Installations,Returns & Replacement,0.318,Vague: the message does not say what the problem is
+26,SR505601,Product Advice,Repairs,0.332,Vague: the message does not say what the problem is
+27,SR505380,Consumables,Warranty Claims,0.444,Vague: the message does not say what the problem is
+28,SR505421,Product Advice,Repairs,0.335,Vague: the message does not say what the problem is
+29,SR506161,Product Advice,Billing,0.374,Vague: the message does not say what the problem is
+30,SR504855,Warranty Claims,Billing,0.281,Vague: the message does not say what the problem is
+31,SR505901,Installations,Billing,0.238,Vague: the message does not say what the problem is
+32,SR505377,Consumables,Repairs,0.583,Vague: the message does not say what the problem is
+33,SR508483,Installations,Consumables,0.553,Vague: the message does not say what the problem is
+34,SR504459,Installations,Returns & Replacement,0.411,Vague: the message does not say what the problem is
+35,SR509738,Product Advice,Installations,0.339,Vague: the message does not say what the problem is
+36,SR506390,Consumables,Product Advice,0.342,Vague: the message does not say what the problem is
+37,SR509313,Product Advice,Warranty Claims,0.3,Vague: the message does not say what the problem is
+38,SR509619,Product Advice,Repairs,0.469,Vague: the message does not say what the problem is
+39,SR510473,Returns & Replacement,Repairs,0.255,Vague: the message does not say what the problem is
+40,SR504456,Installations,Repairs,0.358,Vague: the message does not say what the problem is
+41,SR505860,Installations,Consumables,0.324,Vague: the message does not say what the problem is
+42,SR509595,Billing,Repairs,0.995,"Clear message, destination contradicts it (looks like label noise)"
+43,SR509856,Returns & Replacement,Repairs,0.293,Vague: the message does not say what the problem is
+44,SR507787,Consumables,Returns & Replacement,0.23,Vague: the message does not say what the problem is
+45,SR509404,Product Advice,Installations,0.323,Vague: the message does not say what the problem is
+46,SR505237,Returns & Replacement,Installations,0.329,Vague: the message does not say what the problem is
+47,SR507063,Installations,Product Advice,0.494,Vague: the message does not say what the problem is
+48,SR508846,Consumables,Product Advice,0.229,Vague: the message does not say what the problem is
+49,SR505944,Warranty Claims,Product Advice,0.307,Vague: the message does not say what the problem is
+50,SR504852,Returns & Replacement,Warranty Claims,0.377,Vague: the message does not say what the problem is
+51,SR507369,Installations,Repairs,0.376,Vague: the message does not say what the problem is
+52,SR510256,Warranty Claims,Repairs,0.987,"Clear message, two teams defensible"
+53,SR505243,Consumables,Returns & Replacement,0.402,Vague: the message does not say what the problem is
+54,SR507969,Billing,Repairs,0.413,"Two-part message, last part generic"
+55,SR508197,Consumables,Repairs,0.478,Vague: the message does not say what the problem is
+56,SR508106,Billing,Repairs,0.402,Vague: the message does not say what the problem is
+57,SR504992,Warranty Claims,Consumables,0.369,Vague: the message does not say what the problem is
+58,SR507234,Product Advice,Installations,0.528,Vague: the message does not say what the problem is
+59,SR508770,Billing,Repairs,0.444,Vague: the message does not say what the problem is
+60,SR505126,Repairs,Product Advice,0.309,Vague: the message does not say what the problem is
+61,SR506537,Consumables,Product Advice,0.307,Vague: the message does not say what the problem is
+62,SR505238,Repairs,Warranty Claims,0.462,Vague: the message does not say what the problem is
+63,SR508502,Billing,Installations,0.226,Vague: the message does not say what the problem is
+64,SR507838,Consumables,Repairs,0.986,"Clear message, destination contradicts it (looks like label noise)"
+65,SR508813,Installations,Warranty Claims,0.491,Vague: the message does not say what the problem is
+66,SR505378,Installations,Repairs,0.432,Vague: the message does not say what the problem is
+67,SR509924,Repairs,Returns & Replacement,0.507,Vague: the message does not say what the problem is
+68,SR507725,Returns & Replacement,Billing,0.974,"Clear message, destination contradicts it (looks like label noise)"
+69,SR508304,Billing,Repairs,0.301,Vague: the message does not say what the problem is
+70,SR508083,Billing,Installations,0.388,Vague: the message does not say what the problem is
+71,SR504434,Consumables,Repairs,0.458,Vague: the message does not say what the problem is
+72,SR508015,Repairs,Warranty Claims,0.419,Vague: the message does not say what the problem is
+73,SR510576,Returns & Replacement,Repairs,0.559,Vague: the message does not say what the problem is
+74,SR509973,Installations,Consumables,0.985,"Clear message, destination contradicts it (looks like label noise)"
+75,SR506509,Billing,Repairs,0.303,Vague: the message does not say what the problem is
+76,SR509452,Warranty Claims,Installations,0.63,Vague: the message does not say what the problem is
+77,SR508178,Returns & Replacement,Consumables,0.35,Vague: the message does not say what the problem is
+78,SR510818,Warranty Claims,Installations,0.349,Vague: the message does not say what the problem is
+79,SR505622,Repairs,Returns & Replacement,0.429,Vague: the message does not say what the problem is
+80,SR505415,Product Advice,Repairs,0.424,Vague: the message does not say what the problem is
+81,SR509749,Installations,Billing,0.27,Vague: the message does not say what the problem is
+82,SR506391,Installations,Repairs,0.408,Vague: the message does not say what the problem is
+83,SR505058,Consumables,Billing,0.617,Vague: the message does not say what the problem is
+84,SR507407,Product Advice,Repairs,0.616,Vague: the message does not say what the problem is
+85,SR505560,Warranty Claims,Billing,0.276,Vague: the message does not say what the problem is
+86,SR509780,Installations,Returns & Replacement,0.296,Vague: the message does not say what the problem is
+87,SR506812,Repairs,Billing,0.277,Vague: the message does not say what the problem is
+88,SR504612,Installations,Warranty Claims,0.502,"Two-part message, last part generic"
+89,SR508144,Billing,Repairs,0.244,Vague: the message does not say what the problem is
+90,SR507043,Repairs,Installations,0.272,Vague: the message does not say what the problem is
+91,SR508871,Returns & Replacement,Repairs,0.293,Vague: the message does not say what the problem is
+92,SR507177,Repairs,Installations,0.322,Vague: the message does not say what the problem is
+93,SR507129,Consumables,Warranty Claims,0.34,"Two-part message, last part generic"
+94,SR505392,Installations,Billing,0.366,"Two-part message, last part generic"
+95,SR506869,Returns & Replacement,Billing,0.256,Vague: the message does not say what the problem is
+96,SR504763,Warranty Claims,Billing,0.637,Vague: the message does not say what the problem is
+97,SR507661,Product Advice,Installations,0.395,Vague: the message does not say what the problem is
+98,SR508560,Returns & Replacement,Repairs,0.333,Vague: the message does not say what the problem is

@@ -218,3 +218,17 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+
+# Customer data must not be public (ops-policy section 10)
+data/raw/*
+data/clean/*
+!data/raw/.gitkeep
+!data/clean/.gitkeep
+eval/errors.csv
+docs/submission_answers.md

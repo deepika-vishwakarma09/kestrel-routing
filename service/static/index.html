@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kestrel request router</title>
+<style>
+  :root { --bg:#f6f7f9; --card:#fff; --ink:#1c2430; --mute:#5f6b7a; --line:#e2e6ec; --ok:#1a7f4b; --warn:#b26a00; --accent:#1f4fd8; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#12161c; --card:#1b212a; --ink:#e8ecf2; --mute:#98a3b3; --line:#2b3340; --ok:#4cc38a; --warn:#f0b04a; --accent:#7ea2ff; } }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--ink); }
+  main { max-width:860px; margin:0 auto; padding:24px 16px 48px; }
+  h1 { font-size:22px; margin:0 0 4px; } .sub { color:var(--mute); margin:0 0 20px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:18px; margin-bottom:16px; }
+  label { display:block; font-size:13px; color:var(--mute); margin:12px 0 4px; }
+  textarea, select { width:100%; padding:10px; border:1px solid var(--line); border-radius:8px; background:var(--bg); color:var(--ink); font:inherit; }
+  textarea { min-height:90px; resize:vertical; }
+  .row { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; } @media (max-width:640px){ .row{grid-template-columns:1fr;} }
+  button { cursor:pointer; border:0; border-radius:8px; padding:10px 18px; font:inherit; font-weight:600; background:var(--accent); color:#fff; }
+  button.ghost { background:transparent; color:var(--accent); border:1px solid var(--line); font-weight:500; padding:6px 10px; font-size:13px; margin:4px 6px 0 0; }
+  .team { font-size:26px; font-weight:700; margin:0; }
+  .pill { display:inline-block; padding:3px 10px; border-radius:99px; font-size:13px; font-weight:600; margin-left:8px; vertical-align:middle; }
+  .pill.ok { background:color-mix(in srgb, var(--ok) 18%, transparent); color:var(--ok); }
+  .pill.warn { background:color-mix(in srgb, var(--warn) 20%, transparent); color:var(--warn); }
+  .bar { height:8px; background:var(--line); border-radius:6px; overflow:hidden; margin:10px 0 4px; } .bar > div { height:100%; background:var(--accent); }
+  ul { margin:8px 0 0; padding-left:20px; } li { margin:6px 0; }
+  .mute { color:var(--mute); font-size:13px; } .err { color:#c0392b; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Kestrel request router</h1>
+  <p class="sub">Paste a customer message. The service says which team it should go to, how sure it is, and why.</p>
+
+  <div class="card">
+    <div class="mute">Try an example:</div>
+    <div id="examples"></div>
+    <label for="text">Customer message</label>
+    <textarea id="text" placeholder="e.g. paid for installation of my water purifier but nobody came"></textarea>
+    <p><button id="go">Route this request</button></p>
+  </div>
+
+  <div id="out"></div>
+</main>
+
+<script>
+const EXAMPLES = [
+  {label:"Paid for installation", text:"hello, paid for installation of my water purifier but nobody turned up"},
+  {label:"Charged twice", text:"urgent: charged twice for air fryer order, please refund"},
+  {label:"Two things in one", text:"installation slot for water purifier not confirmed, box was open and scratched"},
+  {label:"Vague message", text:"complaint about room heater pls call back"}
+];
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+
+function init() {
+  $('examples').innerHTML = EXAMPLES.map((x,i) => `<button class="ghost" data-i="${i}">${esc(x.label)}</button>`).join('');
+  $('examples').onclick = e => { const i = e.target.dataset.i; if (i === undefined) return; $('text').value = EXAMPLES[i].text; go(); };
+  $('go').onclick = go;
+}
+
+async function go() {
+  const body = {request_text:$('text').value};
+  $('out').innerHTML = '<div class="card mute">Routing...</div>';
+  try {
+    const r = await fetch('/route', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body)});
+    const d = await r.json();
+    if (!r.ok) { $('out').innerHTML = `<div class="card err"><b>${esc(d.error || 'Something went wrong')}</b>${d.fix ? '<br><span class="mute">'+esc(d.fix)+'</span>' : ''}</div>`; return; }
+    const auto = d.action === 'route_automatically';
+    $('out').innerHTML = `
+      <div class="card">
+        <p class="team">${esc(d.team)}<span class="pill ${auto?'ok':'warn'}">${auto ? 'Route automatically' : 'Send to a person'}</span></p>
+        <div class="bar"><div style="width:${Math.round(d.confidence*100)}%"></div></div>
+        <div class="mute">Confidence ${Math.round(d.confidence*100)}%. Other likely teams: ${d.alternatives.map(a => esc(a.team)+' '+Math.round(a.probability*100)+'%').join(', ')}</div>
+        <h3 style="margin:16px 0 0;font-size:15px">Why</h3>
+        <ul>${d.reasons.length ? d.reasons.map(r => '<li>'+esc(r)+'</li>').join('') : '<li class="mute">No single phrase stands out.</li>'}</ul>
+      </div>`;
+  } catch (e) { $('out').innerHTML = '<div class="card err">Cannot reach the service. Is it running?</div>'; }
+}
+init();
+</script>
+</body>
+</html>
