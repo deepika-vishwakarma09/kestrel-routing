@@ -6,7 +6,7 @@
 4. **Zoho resolution times shifted +5:30** (ops-policy section 9). Before the fix 1,140 requests resolved before they were created; after, none. Resolution time is not a model input (it does not exist for a new request); it is used only for workload and cost.
 5. **Legacy text repaired.** 480 Zoho rows had broken characters. I repaired them and reduced all text to plain letters so old and new look the same. The test set has none.
 6. **Numbers removed from text** (request numbers, "reg no SR..."), so the model cannot memorise ids.
-7. **Customer data stays out of the public repo** (ops-policy section 10). The CSVs are git-ignored. The saved model keeps only words that appear in at least 5 requests (1,688 entries, none with digits).
+7. **Customer data stays out of the public repo** (ops-policy section 10). The CSVs are git-ignored. The saved model keeps only words and word pairs that appear in at least 5 requests (1,693 distinct entries, none with digits).
 8. **Words only, no character n-grams.** Five variants all scored 83.6% to 84.0% at that stage, so I took the simplest one that I can explain and that stores the least customer text.
 9. **Added the last clause as its own feature.** Reading the mistakes showed that when a message raises two things, the request usually ended with the team for the last one. Adding that feature took accuracy from 83.8% to 85.5% in all three backtests, and from 76% to 91% on two-part requests (12.9% of requests).
 10. **Text only: dropped `channel`, `product_family` and `warranty_status`.** They added nothing (85.6% without, 85.5% with), and `product_family` names a different product from the message in 17.5% of requests, so I do not trust it.

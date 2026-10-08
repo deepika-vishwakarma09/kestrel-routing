@@ -122,7 +122,7 @@ kestrel-routing/
 │   ├── app.py              the endpoint
 │   └── static/index.html   the screen
 │
-├── models/                 router.joblib: the trained model (1,688 common words, no customer text)
+├── models/                 router.joblib: the trained model (about 1,700 common words and word pairs, no customer text)
 ├── eval/                   report.md, confusion_matrix.csv, error_review.csv, error_review_summary.md
 ├── outputs/                findings.txt and charts/
 ├── docs/                   memo, decisions, expected_score, handoff_notes, ai_usage_log
