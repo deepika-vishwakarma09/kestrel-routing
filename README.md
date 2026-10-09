@@ -4,7 +4,7 @@ A small model that reads a customer's request and says which of Kestrel's seven 
 
 **Main finding:** the bot's labels are not the right answer. They show where the bot sent a request, and only 77.2% of those match the team that finally closed it. A model trained to copy the bot reaches the 90% asked for in the brief (96.6%) but is right only 78.7% of the time. So I trained on where requests actually ended up. That model is right 85.6% of the time, and is very sure (98.1% right) on 84.3% of requests. The rest go to a person. Full reasoning in [`docs/memo.md`](docs/memo.md).
 
-**Screen recording (3 min):** 
+**Screen recording (3 min):** [https://drive.google.com/file/d/1PfgvXrJLPOSgU_f4lrkikwTmzB2H3aRY/view?usp=sharing]
 
 ## Run the service (30 seconds, no data and no key needed)
 
